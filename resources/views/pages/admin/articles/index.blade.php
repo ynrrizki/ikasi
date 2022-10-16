@@ -18,7 +18,6 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Author</th>
                             <th>Title</th>
                             <th>Content</th>
                             <th>Thumbnail</th>
@@ -29,7 +28,6 @@
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Author</th>
                             <th>Title</th>
                             <th>Content</th>
                             <th>Thubmnail</th>
@@ -39,7 +37,28 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
+                        @foreach ($articles as $article)
+                            <tr>
+                                <td>{{ $article->title }}</td>
+                                <td>{!! $article->content !!}</td>
+                                <td><img src="{{ Storage::url($article->thumbnail) }}" width="350"
+                                        class="rounded img-fluid">
+                                </td>
+                                {{-- <td><img src="{{ $article->thumbnail }}" width="200"></td> --}}
+                                <td>Sepak Bola</td>
+                                <td>{{ $article->created_at }}</td>
+                                <td>
+                                    <div class="col-1">
+                                        <a href="#" class="btn btn-primary mb-3"><i class="fas fa-eye"></i></a>
+
+                                        <a href="#" class="btn btn-warning mb-3"><i class="fas fa-pen"></i></a>
+
+                                        <button href="#" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                        {{-- <tr>
                             <td>Tiger Nixon</td>
                             <td>Tiger Nixon</td>
                             <td>Tiger Nixon</td>
@@ -50,19 +69,7 @@
                                 <a href="#" class="btn btn-warning"><i class="fas fa-pen"></i></a>
                                 <button href="#" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                            <td>Garrett Winters</td>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>Tokyo</td>
-                            <td>
-                                <a href="#" class="btn btn-warning"><i class="fas fa-pen"></i></a>
-                                <button href="#" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
+                        </tr> --}}
                     </tbody>
                 </table>
             </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -14,8 +15,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        $articles = Article::all();
         $data = [
-            'title' => 'Articles'
+            'title'     => 'Articles',
+            'articles'  =>  $articles,
         ];
         return view('pages.admin.articles.index', $data);
     }
@@ -41,7 +44,20 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        return dd($request->all());
+
+        $validateData = $request->validate([
+            'title'     =>  'required',
+            'thumbnail' =>  'image|file|max:1024',
+            'article_category_id'   => 'required',
+            'content'   =>  'required',
+        ]);
+
+        if ($request->file('thumbnail')) {
+            $validateData['thumbnail'] = $request->file('thumbnail')->store('thumbnail-images');
+        }
+
+        Article::create($validateData);
+        return back()->with('articleSuccess', 'Article berhasil ditambahkan!');
     }
 
     /**

@@ -16,16 +16,16 @@
             <div class="card-body">
                 <div class="col-10">
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input class="form-control" type="text" name="title">
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" name="name">
                     </div>
                     <div class="form-group">
-                        <label for="title">Thumbnail</label>
-                        <input class="form-control" type="file" name="thumbnail">
+                        <label for="address">Address</label>
+                        <input class="form-control" type="text" name="address">
                     </div>
                     <div class="form-group">
-                        <label for="content">Content</label>
-                        <textarea name="content" id="editor"></textarea>
+                        <label for="map">Embed Map</label>
+                        <input type="text" class="form-control" name="map">
                     </div>
                 </div>
             </div>
