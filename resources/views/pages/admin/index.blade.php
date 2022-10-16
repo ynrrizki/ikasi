@@ -232,10 +232,10 @@
     </div> --}}
     @push('addon-js')
         <!-- Page level plugins -->
-        <script src="{{ asset('themes/sb-admin2/vendor/chart.js/Chart.min.js') }}"></script>
+        <script src="{{ secure_asset('themes/sb-admin2/vendor/chart.js/Chart.min.js') }}"></script>
 
         <!-- Page level custom scripts -->
-        <script src="{{ asset('themes/sb-admin2/js/demo/chart-area-demo.js') }}"></script>
-        <script src="{{ asset('themes/sb-admin2/js/demo/chart-pie-demo.js') }}"></script>
+        <script src="{{ secure_asset('themes/sb-admin2/js/demo/chart-area-demo.js') }}"></script>
+        <script src="{{ secure_asset('themes/sb-admin2/js/demo/chart-pie-demo.js') }}"></script>
     @endpush
 @endsection

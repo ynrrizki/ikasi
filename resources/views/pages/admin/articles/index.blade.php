@@ -3,7 +3,7 @@
 @section('content')
     @push('addon-css')
         <!-- Custom styles for this page -->
-        <link href="{{ asset('themes/sb-admin2/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('themes/sb-admin2/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
     @endpush
     <!-- Page Heading -->
     @include('components.heading')
@@ -77,10 +77,10 @@
     </div>
     @push('addon-js')
         <!-- Page level plugins -->
-        <script src="{{ asset('themes/sb-admin2/vendor/datatables/jquery.dataTables.min.js') }}"></script>
-        <script src="{{ asset('themes/sb-admin2/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+        <script src="{{ secure_asset('themes/sb-admin2/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ secure_asset('themes/sb-admin2/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
         <!-- Page level custom scripts -->
-        <script src="{{ asset('themes/sb-admin2/js/demo/datatables-demo.js') }}"></script>
+        <script src="{{ secure_asset('themes/sb-admin2/js/demo/datatables-demo.js') }}"></script>
     @endpush
 @endsection
