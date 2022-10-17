@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Inspiring;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+Route::get('/artisan/storage', function () {
+    $command = 'storage:link';
+    $result = Artisan::call($command);
+    return Artisan::output();
+});
