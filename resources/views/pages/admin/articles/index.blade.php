@@ -41,7 +41,7 @@
                             <tr>
                                 <td>{{ $article->title }}</td>
                                 <td>{!! $article->content !!}</td>
-                                <td><img src="{{ secure_asset('storage/' . $article->thumbnail) }}" width="350"
+                                <td><img src="{{ Storage::url($article->thumbnail) }}" width="350"
                                         class="rounded img-fluid">
                                 </td>
                                 {{-- <td><img src="{{ $article->thumbnail }}" width="200"></td> --}}
